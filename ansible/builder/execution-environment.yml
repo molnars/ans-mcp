@@ -8,5 +8,5 @@ dependencies:
 additional_build_steps:
   # prepend_base:
   #   - RUN echo "Additional steps for prepend_base"
-  append_base:
+  append_base: None
   
