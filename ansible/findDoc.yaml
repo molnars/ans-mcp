@@ -1,6 +1,6 @@
 - name: Read MongoDB documents
   hosts: localhost
-  become: yes # Use if elevated privileges are needed to run mongosh
+  gather_facts: true
 
   tasks:
     - name: Find all documents in a collection
