@@ -1,0 +1,20 @@
+- name: Read MongoDB documents
+  hosts: localhost
+  become: yes # Use if elevated privileges are needed to run mongosh
+
+  tasks:
+    - name: Find all documents in a collection
+      community.mongodb.mongodb_shell:
+        command: "db.subscribers.find({'imsi': {{ imsi }} })"
+        login_host: "{{ mongo_host }}"
+        login_port: "{{ mongo_port }}"
+        #login_user: "{{ mongodb_user }}"
+        #login_password: "{{ mongodb_password }}"
+        #login_database: "{{ mongodb_auth_database | default('admin') }}" # Database for authentication
+        database: "{{ mongodb_database }}" # Database to query
+      register: find_result
+      
+    - name: Display the result of the update operation
+      ansible.builtin.debug:
+        msg: "Matched: {{ find_result.matched_count }}, Modified: {{ find_result.modified_count }}, Upserted ID: {{ find_result.upserted_id }}"
+        msg: "Doc: {{ find_result }}"
