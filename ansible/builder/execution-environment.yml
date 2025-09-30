@@ -1,7 +1,7 @@
 version: 3
 images:
   base_image: 
-    name: 'registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest'
+    name: 'registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest'
     #'quay.io/ansible/ansible-runner:latest'
 dependencies:
   galaxy: dependencies/requirements.yml
@@ -9,5 +9,8 @@ dependencies:
 #additional_build_steps:
   # prepend_base:
   #   - RUN echo "Additional steps for prepend_base"
-  #append_base: {}
+  append_base:
+    # - RUN echo "Additional steps for append_base"
+    - RUN yum install -y yum-utils
+    - RUN yum install -y dnf gcc krb5-devel libcurl-devel libssh-devel libxml2-devel make openssl-devel python3-Cython python3-devel python3-jmespath python3-lxml python3-netaddr python3-rpm python38-devel python38-pytz python38-pyyaml python38-requests python39-devel
   
