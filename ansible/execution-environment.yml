@@ -1,9 +1,6 @@
 version: 3
-
-build_arg_defaults:
-  # Base image is typically a standard provided image
-  EE_BASE_IMAGE: 'quay.io/ansible/ansible-runner:latest'
-
+# Base image is typically a standard provided image
+base_image: 'quay.io/ansible/ansible-runner:latest'
 dependencies:
   galaxy: requirements.yml
   python: requirements.txt
