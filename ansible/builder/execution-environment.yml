@@ -9,7 +9,7 @@ dependencies:
 additional_build_steps:
   prepend_base:
   #   - RUN echo "Additional steps for prepend_base"
-    - RUN yum install -y dnf
+    - RUN yum install -y pymongo
   append_base:
     # - RUN echo "Additional steps for append_base"
     - RUN yum install -y yum-utils
