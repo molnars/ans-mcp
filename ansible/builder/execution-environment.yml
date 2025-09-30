@@ -1,7 +1,8 @@
 version: 3
 images:
   base_image: 
-    name: 'quay.io/ansible/ansible-runner:latest'
+    name: 'registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest'
+    #'quay.io/ansible/ansible-runner:latest'
 dependencies:
   galaxy: dependencies/requirements.yml
   python: dependencies/requirements.txt
