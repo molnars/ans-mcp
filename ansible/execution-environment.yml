@@ -1,13 +1,5 @@
 version: 3
-# Base image is typically a standard provided image
 base_image: 'quay.io/ansible/ansible-runner:latest'
 dependencies:
   galaxy: requirements.yml
   python: requirements.txt
-
-#additional_build_steps:
-#  # Optional: Add any extra OS-level packages if needed (not typically required for pymongo)
-#  prepend_base: |
-#    RUN dnf install -y python3-pip
-#  append_final: |
-#    RUN echo "This EE is ready for MongoDB automation!"
