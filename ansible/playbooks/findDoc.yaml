@@ -17,4 +17,7 @@
     - name: Display the result of the update operation
       ansible.builtin.debug:
         msg: "Matched: {{ find_result.matched_count }}, Modified: {{ find_result.modified_count }}, Upserted ID: {{ find_result.upserted_id }}"
+    
+    - name: Display the result of the update operation
+      ansible.builtin.debug:
         msg: "Doc: {{ find_result }}"
